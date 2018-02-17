@@ -1,2 +1,23 @@
 # mpv-video-cutter
 cut video and concat automatically
+put these two into ~/.config/mpv/scripts/,then use shell:mpv path/file open the movie
+press c will confirm a left trim,then press c you will confirm a right trim,left and right trim ensure one segment,you can continue do this,at last press key o,the video will be cut and concatenated in the video's dir automatically.
+this script uses the FFmpeg to finish the job,and is lossless cutting,the cut video will not lose quality. 
+
+press key c:cut point,the odd times is letf trim, the even times is right trim
+press key o:output the cut video and concat
+press key r:reset,clean the queue that record the cut point
+press s:reset,and set the first cut point(left trim) in 0 second.
+press e:set the right trim in the end time of the video
+
+also you can bind your own hot key to the event.
+I have defined some event you can bind it in the ~/.config/mpv/input.conf,for example:Ctrl+s script-binding set_fromStart
+here are them:
+cut_movie:cut time point,default key 'c'
+log_time_queue:print the queue that record the cut point,defalut key 'l'
+output_queue:output video,default key 'o'
+set_fromStart:reset,and set the first cut point(left trim) in 0 second,default key 's' 
+set_End:set the right trim in the end time of the video,default key 'e'
+
+
+In fact,I should also add some more function like undo the cut,but I am lazy to do this,I will finish it when I want to do it : )
