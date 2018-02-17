@@ -1,6 +1,6 @@
 # mpv-video-cutter
 cut video and concat automatically
-put these two into ~/.config/mpv/scripts/,then use shell:mpv path/file open the movie
+put c_concat.sh cutter.lua into ~/.config/mpv/scripts/,then use shell:mpv path/file open the movie
 press c will confirm a left trim,then press c you will confirm a right trim,left and right trim ensure one segment,you can continue do this,at last press key o,the video will be cut and concatenated in the video's dir automatically.
 this script uses the FFmpeg to finish the job,and is lossless cutting,the cut video will not lose quality. 
 
