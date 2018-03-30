@@ -1,5 +1,5 @@
 # mpv-video-cutter   
-support mac os x and linux,if you want it supports windows,you should write CMD instead of Bash Shell,sorry I am lazy to do that.  
+support mac os x and linux,if you want it supports windows,you can write CMD instead of Bash Shell,or use Cygwin.  
 
    it can cut video and concat automatically  
 put **c_concat.sh** , **cutter.lua** into ~/.config/mpv/scripts/,then use shell:mpv path/file open the movie
@@ -22,4 +22,4 @@ here are them:
 * **set_End** : set the right trim in the end time of the video,default key 'e'
 
 
-In fact,I should also add some more function like undo the cut,but I am lazy to do this,I will finish it when I want to do it : )
+In fact,I should also add some more function like undo the cut,I will finish it some time : )
