@@ -6,6 +6,7 @@ time_queue={}
 output_file='~/.config/mpv/scripts/time_pairs.txt'
 --c_concat_sh='~/Documents/my_cut/c_concat.sh'
 c_concat_sh='~/.config/mpv/scripts/c_concat.sh'
+c_concat_sh2='~/.config/mpv/scripts/c_concat2.sh'
 --run_sh='~/Documents/my_cut/run.sh'
 run_sh='~/.config/mpv/scripts/run.sh'
 run_dir='~/.config/mpv/scripts'
@@ -145,3 +146,53 @@ function get_path()--clean and set 0 to left trim
 
 end
 mp.add_key_binding("p", "get_path", get_path)
+
+function undo()--clean and set 0 to left trim
+    if(count==0)
+    then
+    	print("cat't undo!")
+    else
+    	table.remove(time_queue)
+		count=count-1
+		print('undo!last trim:'..time_queue[count])
+    end 
+		
+end
+mp.add_key_binding("z", "undo", undo)
+
+
+function acu_output_queue()--精确切割，时间慢
+	
+	local filename = mp.get_property('filename')
+	local file_path = mp.get_property('path')
+	local output_dir=string.sub(file_path,0,#file_path - #filename - 1)
+
+	local video_path=mp.get_property('stream-path')
+	print('video_path:'..video_path)
+	--video_path = string.gsub(video_path, " ", "\\ ")
+	print('_video_path:'..video_path)
+	local str = ''
+	local shell_str = ''
+	if(count%2==1)
+	then
+		print('please confrim the right trim!')
+	else
+		for k,v in ipairs(time_queue)
+		do
+			if (k%2==1) then str=str..v..',' else str=str..v..'\\n'  end
+		end
+		str=string.sub(str,0,#str-2)
+		shell_str='echo'..' '..'"'..str..'"'..'>'..' '..output_file
+		print('shell:'..shell_str)
+		os.execute('pwd')
+		--os.execute(mkdir_sh)
+		os.execute(shell_str)
+		print('shell:'..c_concat_sh2 .. ' '..output_file..' "'..video_path..'" '..output_dir)
+		os.execute(c_concat_sh2 .. ' "'..output_file..'" "'..video_path..'" "'..output_dir..'" "'..run_dir..'"')
+		os.execute(run_sh)
+
+	end
+end
+mp.add_key_binding("i", "acu_output_queue", acu_output_queue)
+
+

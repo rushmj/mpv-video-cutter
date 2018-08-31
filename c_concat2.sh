@@ -47,7 +47,7 @@ for  i  in  ${!a[@]};do
 	# then
 	# 	echo "echo \"file 'clip$i.mkv'\" >>$dir_name/concat.txt" >run.sh
 	# fi
-	echo "ffmpeg -ss $left -i '$input' -t $duration -c  copy -avoid_negative_ts 1 $dir_name/clip$i.$file_format" >>run.sh
+	echo "ffmpeg -ss $left -i '$input' -t $duration  $dir_name/clip$i.$file_format" >>run.sh
 	#echo "ffmpeg -y -accurate_seek -ss $left  -t $duration -i '$input' -c  copy -avoid_negative_ts 1 $dir_name/clip$i.$file_format" >>run.sh
 
 	echo "echo \"file 'clip$i.$file_format'\" >>$dir_name/concat.txt" >>run.sh
