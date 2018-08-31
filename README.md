@@ -23,6 +23,8 @@ here are them:
 * **output_queue** : output video,default key 'o'
 * **set_fromStart** : reset,and set the first cut point(left trim) in 0 second,default key 's' 
 * **set_End** : set the right trim in the end time of the video,default key 'e'
+* **acu_output_queue** : accurate time cut 
+* **undo** : undo
 
 
 In fact,I should also add some more function like undo the cut,I will finish it some time : )
