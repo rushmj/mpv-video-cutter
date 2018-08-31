@@ -12,6 +12,7 @@ this script uses the FFmpeg to finish the job,and is lossless cutting,the cut vi
 * **press key r** : reset,clean the queue that record the cut point
 * **press s** : reset,and set the first cut point(left trim) in 0 second.
 * **press e** : set the right trim in the end time of the video
+* **press z** : undo the cut
 
 
 also you can bind your own hot key to the event.
