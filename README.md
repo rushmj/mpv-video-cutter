@@ -8,9 +8,11 @@ this script uses the FFmpeg to finish the job,and is lossless cutting,the cut vi
 
 * **press key c** : cut point,the odd times is letf trim, the even times is right trim
 * **press key o** : output the cut video and concat
+* **press i** : output the accurate cut video and concat
 * **press key r** : reset,clean the queue that record the cut point
 * **press s** : reset,and set the first cut point(left trim) in 0 second.
 * **press e** : set the right trim in the end time of the video
+
 
 also you can bind your own hot key to the event.
 I have defined some event you can bind it in the ~/.config/mpv/input.conf,for example:Ctrl+s script-binding set_fromStart
