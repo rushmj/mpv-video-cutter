@@ -19,6 +19,13 @@ function file_exists(path)
   return file ~= nil
 end
 
+function table_leng(t)
+  local leng=0
+  for k, v in pairs(t) do
+    leng=leng+1
+  end
+  return leng;
+end
 
 
 function cut_movie()
@@ -154,7 +161,14 @@ function undo()--clean and set 0 to left trim
     else
     	table.remove(time_queue)
 		count=count-1
-		print('undo!last trim:'..time_queue[count])
+		if(count==0)
+		then
+			print('undo!time_queue is empty.')
+		else
+			print('undo!last trim:'..time_queue[count])
+		end
+		
+		
     end 
 		
 end
