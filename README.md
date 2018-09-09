@@ -27,4 +27,4 @@ here are them:
 * **undo** : undo
 
 
-In fact,I should also add some more function like undo the cut,I will finish it some time : )
+In fact,I should also add some more function like GUI editor?
