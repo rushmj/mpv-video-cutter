@@ -9,6 +9,7 @@ fi
 time_pairs_txt=$1 #txt file that contain time suits for trim
 input=$2
 #input=${input//' '/'\ '}
+input=`printf %q "$input"`
 output='date "+%Y_%m_%d_%H_%M_%S"'
 dir_name=.cut_video
 dir_path=$3
@@ -47,8 +48,8 @@ for  i  in  ${!a[@]};do
 	# then
 	# 	echo "echo \"file 'clip$i.mkv'\" >>$dir_name/concat.txt" >run.sh
 	# fi
-	echo "ffmpeg -ss $left -i '$input' -t $duration  $dir_name/clip$i.$file_format" >>run.sh
-	#echo "ffmpeg -y -accurate_seek -ss $left  -t $duration -i '$input' -c  copy -avoid_negative_ts 1 $dir_name/clip$i.$file_format" >>run.sh
+	echo "ffmpeg -ss $left -i $input -t $duration  $dir_name/clip$i.$file_format" >>run.sh
+	#echo "ffmpeg -y -accurate_seek -ss $left  -t $duration -i $input -c  copy -avoid_negative_ts 1 $dir_name/clip$i.$file_format" >>run.sh
 
 	echo "echo \"file 'clip$i.$file_format'\" >>$dir_name/concat.txt" >>run.sh
 
