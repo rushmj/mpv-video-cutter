@@ -52,7 +52,7 @@ for  i  in  ${!a[@]};do
 	echo "ffmpeg -ss $left -i $input -t $duration -c  copy -avoid_negative_ts 1 $dir_name/clip$i.$file_format" >>run.sh
 	#-avoid_negative_ts avoid ffmpeg starting from negative time.
 	#echo "ffmpeg -y -accurate_seek -ss $left  -t $duration -i '$input' -c  copy -avoid_negative_ts 1 $dir_name/clip$i.$file_format" >>run.sh
-
+	#When transcoding and -accurate_seek is default enabled ,this make accurate time cut ,but when doing stream copy it won't work.
 	echo "echo \"file 'clip$i.$file_format'\" >>$dir_name/concat.txt" >>run.sh
 
 done
