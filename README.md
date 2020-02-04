@@ -1,5 +1,5 @@
 # mpv-video-cutter   
-support mac os x and linux,if you want it supports windows,you can write CMD instead of Bash Shell.  
+Before using it,mpv and ffmpeg should be installed.support mac os x and linux,if you want it supports windows,you can write CMD instead of Bash Shell.  
 
    it can cut video and concat automatically  
 put **c_concat.sh** , **cutter.lua** into ~/.config/mpv/scripts/,then use shell:mpv path/file open the movie
