@@ -207,6 +207,6 @@ function acu_output_queue()--精确切割，时间慢
 
 	end
 end
-mp.add_key_binding("i", "acu_output_queue", acu_output_queue)
+mp.add_key_binding("y", "acu_output_queue", acu_output_queue)
 
 
