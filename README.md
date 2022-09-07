@@ -28,3 +28,5 @@ here are them:
 
 
 In fact,I should also add some more function like GUI editor?
+
+If you don't want the player automatically closes when video ends causing the clip to fail,add "keep-open=yes" to ~/.config/mpv/mpv.conf 
